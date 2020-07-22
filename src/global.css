@@ -1,4 +1,18 @@
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
 body {
-  box-sizing: border-box;
-  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  color: #212121;
+  background: #f7f7f7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.calendar-app-wrapper {
+  margin: 1rem auto;
+  max-width: 120rem;
 }
