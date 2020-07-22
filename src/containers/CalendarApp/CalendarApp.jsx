@@ -1,9 +1,17 @@
 import React from 'react';
 
+// Other
+import { Container } from 'reactstrap';
+
+// Components
+import CalendarAppWrapper from './CalendarAppWrpper';
+
 const CalendarApp = () => (
-  <div className='calendar-app-wrapper'>
-    <h1>Clendar app</h1>
-  </div>
+  <CalendarAppWrapper>
+    <Container>
+      <h1>Clendar app</h1>
+    </Container>
+  </CalendarAppWrapper>
 );
 
 export default CalendarApp;
