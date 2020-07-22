@@ -11,3 +11,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.calendar-row {
+  display: flex;
+  width: 100%;
+}
+
+.calendar-row .calendar-col {
+  flex-grow: 1;
+  width: 14%;
+}
