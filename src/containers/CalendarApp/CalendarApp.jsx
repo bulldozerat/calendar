@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // Other
-import meetings from './meetings.json';
+// import meetings from './meetings.json';
 import { Container } from 'reactstrap';
 import { convertNumberToMonthStirng } from '../../utils/helpers';
 
@@ -10,7 +10,7 @@ import CalendarAppWrapper from './CalendarAppWrpper';
 import CalendarHeader from '../../components/CalendarHeader';
 
 const CalendarApp = () => {
-  const [meetingsData, setMeetingsData] = useState(meetings);
+  // const [meetingsData, setMeetingsData] = useState(meetings);
 
   return (
     <CalendarAppWrapper>

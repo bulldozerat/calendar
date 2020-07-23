@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "globals": {
+    "fetch": false,
+    "window": false,
+    "document": false,
+    "console": false
+  }
+}
