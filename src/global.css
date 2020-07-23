@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  background: #f7f7f7;
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
@@ -18,5 +19,35 @@ body {
 
 .calendar-row .calendar-col {
   flex-grow: 1;
-  width: 14%;
+  width: 13%;
+}
+
+.calendar-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .calendar-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .calendar-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .calendar-container {
+    max-width: 1140px;
+  }
 }

@@ -16,7 +16,7 @@ const CalendarDaysGrid = () => {
           .fill()
           .map((x, index) => (
             <div className='calendar-col calendar-day-cell' key={uuid()}>
-              <span className='day-number'>{index + 1}</span>
+              <div className='day-number'>{index + 1}</div>
             </div>
           ))}
       </div>

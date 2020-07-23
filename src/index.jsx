@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 // Other
 import './global.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import CalendarApp from './containers/CalendarApp';

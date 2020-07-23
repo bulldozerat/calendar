@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 // Other
 // import meetings from './meetings.json';
-import { Container } from 'reactstrap';
 import { convertNumberToMonthStirng } from '../../utils/helpers';
 
 // Components
@@ -24,7 +23,7 @@ const CalendarApp = () => {
 
   return (
     <CalendarAppWrapper>
-      <Container>
+      <div className='calendar-container'>
         {/* // TODO extract to component */}
         <h1 className='main-title'>
           {calendarActiveMonthNumber > 0 && <span onClick={() => changeMonth()}>&larr;</span>}
@@ -34,7 +33,7 @@ const CalendarApp = () => {
         {/* // TODO extract to component */}
         <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} dateNow={dateNow} />
         <CalendarDaysGrid />
-      </Container>
+      </div>
     </CalendarAppWrapper>
   );
 };
