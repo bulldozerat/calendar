@@ -6,14 +6,13 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
-  color: #212121;
-  background: #f7f7f7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .calendar-row {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 }
 

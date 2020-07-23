@@ -8,9 +8,9 @@ import { uuid } from 'uuidv4';
 // Components
 import CalendarHeaderWrapper from './CalendarHeaderWrapper';
 
-const currentDayString = convertNumberToDayStirng(new Date().getDay());
+const CalendarHeader = ({ isCurrentMonth, dateNow }) => {
+  const currentDayString = convertNumberToDayStirng(dateNow.getDay());
 
-const CalendarHeader = ({ isCurrentMonth }) => {
   return (
     <CalendarHeaderWrapper className='calendar-row'>
       {calendarDaysOfTheWeek.map(day => (
@@ -26,7 +26,10 @@ const CalendarHeader = ({ isCurrentMonth }) => {
 };
 
 CalendarHeader.propTypes = {
-  isCurrentMonth: PropTypes.bool
+  isCurrentMonth: PropTypes.bool,
+  dateNow: PropTypes.shape({
+    getDay: PropTypes.func
+  })
 };
 
 export default CalendarHeader;

@@ -8,6 +8,7 @@ import { convertNumberToMonthStirng } from '../../utils/helpers';
 // Components
 import CalendarAppWrapper from './CalendarAppWrpper';
 import CalendarHeader from '../../components/CalendarHeader';
+import CalendarDaysGrid from '../CalendarDaysGrid';
 
 const CalendarApp = () => {
   // const [meetingsData, setMeetingsData] = useState(meetings);
@@ -24,14 +25,15 @@ const CalendarApp = () => {
   return (
     <CalendarAppWrapper>
       <Container>
+        {/* // TODO extract to component */}
         <h1 className='main-title'>
           {calendarActiveMonthNumber > 0 && <span onClick={() => changeMonth()}>&larr;</span>}
           {convertNumberToMonthStirng(calendarActiveMonthNumber)}
           {calendarActiveMonthNumber < 11 && <span onClick={() => changeMonth(true)}>&rarr;</span>}
         </h1>
-        <div className='calendar-row'>
-          <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} />
-        </div>
+        {/* // TODO extract to component */}
+        <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} dateNow={dateNow} />
+        <CalendarDaysGrid />
       </Container>
     </CalendarAppWrapper>
   );
