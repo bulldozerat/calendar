@@ -1,22 +1,24 @@
 export const calendarDaysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-export const convertNumberToDayStirng = number => {
-  switch (number) {
-    case 0:
-      return 'Sunday';
-    case 1:
-      return 'Monday';
-    case 2:
-      return 'Tuesday';
-    case 3:
-      return 'Wednesday';
-    case 4:
-      return 'Thursday';
-    case 5:
-      return 'Friday';
-    case 6:
-      return 'Saturday';
-    default:
-      return 'There is some problem';
-  }
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+export const convertNumberToDayStirng = dayNumber => {
+  return calendarDaysOfTheWeek.filter((day, index) => index === dayNumber)[0];
+};
+
+export const convertNumberToMonthStirng = monthdayNumber => {
+  return months.filter((day, index) => index === monthdayNumber)[0];
 };

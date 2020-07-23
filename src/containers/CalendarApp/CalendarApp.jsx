@@ -1,30 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 
 // Other
+import meetings from './meetings.json';
 import { Container } from 'reactstrap';
+import { convertNumberToMonthStirng } from '../../utils/helpers';
 
 // Components
 import CalendarAppWrapper from './CalendarAppWrpper';
 import CalendarHeader from '../../components/CalendarHeader';
 
 const CalendarApp = () => {
-  useEffect(() => {
-    fetchCalendarData();
-  }, []);
-
-  const fetchCalendarData = async () => {
-    await fetch('https://slack-files.com/TLYRT5VGQ-F014G8476RY-38c3178694')
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  };
+  const [meetingsData, setMeetingsData] = useState(meetings);
 
   return (
     <CalendarAppWrapper>
       <Container>
-        <h1 className='main-title'>Calendar App</h1>
+        <h1 className='main-title'>
+          <span>Arrow left</span> {convertNumberToMonthStirng(new Date().getMonth())} <span>Arrow right</span>
+        </h1>
         <div className='calendar-row'>
           <CalendarHeader />
         </div>

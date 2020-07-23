@@ -14,6 +14,17 @@ const CalendarHeaderWrapper = styled.div`
   }
   .active {
     background: skyblue;
+    font-weight: 600;
+  }
+  @media only screen and (max-width: 992px) {
+    .calendar-header-cell {
+      font-size: 1rem;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .calendar-header-cell {
+      font-size: 0.7rem;
+    }
   }
 `;
 
