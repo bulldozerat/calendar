@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Other
 import { calendarDaysOfTheWeek, convertNumberToDayStirng } from '../../utils/helpers';
@@ -9,14 +10,23 @@ import CalendarHeaderWrapper from './CalendarHeaderWrapper';
 
 const currentDayString = convertNumberToDayStirng(new Date().getDay());
 
-const CalendarHeader = () => (
-  <CalendarHeaderWrapper className='calendar-row'>
-    {calendarDaysOfTheWeek.map(day => (
-      <div className={`calendar-col calendar-header-cell ${currentDayString === day ? 'active' : ''}`} key={uuid()}>
-        {day}
-      </div>
-    ))}
-  </CalendarHeaderWrapper>
-);
+const CalendarHeader = ({ isCurrentMonth }) => {
+  return (
+    <CalendarHeaderWrapper className='calendar-row'>
+      {calendarDaysOfTheWeek.map(day => (
+        <div
+          className={`calendar-col calendar-header-cell ${currentDayString === day && isCurrentMonth ? 'active' : ''}`}
+          key={uuid()}
+        >
+          {day}
+        </div>
+      ))}
+    </CalendarHeaderWrapper>
+  );
+};
+
+CalendarHeader.propTypes = {
+  isCurrentMonth: PropTypes.bool
+};
 
 export default CalendarHeader;
