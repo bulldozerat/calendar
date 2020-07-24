@@ -46,6 +46,7 @@ const CalendarApp = () => {
           calendarActiveMonthNumber={calendarActiveMonthNumber}
           meetingsData={meetingsData}
           removeMeeting={removeMeeting}
+          dateNow={dateNow}
         />
       </div>
     </CalendarAppWrapper>

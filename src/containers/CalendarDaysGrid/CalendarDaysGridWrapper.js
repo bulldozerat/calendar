@@ -17,17 +17,19 @@ const CalendarDaysGrid = styled.div`
       font-size: 1.5rem;
     }
     .meeting-info-wrapper {
-      font-size: 10px;
       margin-left: 0.5rem;
       margin-bottom: 0.5rem;
+      font-size: 10px;
     }
     .remove-wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
     .remove-meeting {
       margin-bottom: 0.3rem;
       color: red;
+      font-size: 8px;
       cursor: pointer;
     }
   }

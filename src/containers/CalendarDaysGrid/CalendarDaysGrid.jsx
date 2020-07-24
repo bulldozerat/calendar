@@ -8,7 +8,7 @@ import { getDaysInMonth, getFirstDayOfMonth } from '../../utils/helpers';
 // Components
 import CalendarDaysGridWrapper from './CalendarDaysGridWrapper';
 
-const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData, removeMeeting }) => {
+const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData, removeMeeting, dateNow }) => {
   const totalGridDaysCound = 42;
   const daysInActiveMonth = getDaysInMonth(calendarActiveMonthNumber);
   const firstDayOfActiveMonth = getFirstDayOfMonth(calendarActiveMonthNumber);
@@ -67,7 +67,11 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData, removeMeeti
 
             return (
               <div
-                className={`calendar-col calendar-day-cell ${dayToRender === new Date().getDate() ? 'today-cell' : ''}`}
+                className={`calendar-col calendar-day-cell ${
+                  dayToRender === dateNow.getDate() && calendarActiveMonthNumber === dateNow.getMonth()
+                    ? 'today-cell'
+                    : ''
+                }`}
                 key={uuid()}
               >
                 <div className='day-number'>{dayToRender}</div>
@@ -101,6 +105,7 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData, removeMeeti
 CalendarDaysGrid.propTypes = {
   calendarActiveMonthNumber: PropTypes.number,
   removeMeeting: PropTypes.func,
+  dateNow: PropTypes.string,
   meetingsData: PropTypes.shape({
     meetingRooms: PropTypes.array,
     // Todo add proptypes
