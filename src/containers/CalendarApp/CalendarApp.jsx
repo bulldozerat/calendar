@@ -32,7 +32,7 @@ const CalendarApp = () => {
         </h1>
         {/* // TODO extract to component */}
         <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} dateNow={dateNow} />
-        <CalendarDaysGrid />
+        <CalendarDaysGrid calendarActiveMonthNumber={calendarActiveMonthNumber} />
       </div>
     </CalendarAppWrapper>
   );

@@ -22,3 +22,13 @@ export const convertNumberToDayStirng = dayNumber => {
 export const convertNumberToMonthStirng = monthdayNumber => {
   return months.filter((day, index) => index === monthdayNumber)[0];
 };
+
+export const getDaysInMonth = (month, isPrevMonth) => {
+  const returnMonth = isPrevMonth ? month : month + 1;
+  // January is 0
+  return new Date(2020, returnMonth, 0).getDate();
+};
+
+export const getFirstDayOfMonth = month => {
+  return new Date(2020, month, 1).getDay();
+};
