@@ -63,16 +63,29 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData }) => {
               );
             }
 
+            if (findDayMeetings) {
+              findDayMeetings.sort((a, b) => a.start.localeCompare(b.start));
+            }
+
             console.log('findDayMeetings: ', findDayMeetings);
 
             return (
               <div className={`calendar-col calendar-day-cell`} key={uuid()}>
                 <div className='day-number'>{dayToRender}</div>
-                {findDayMeetings?.map(meeting => (
-                  <div>
-                    {meeting.start} - {meeting.end} {meeting.name} {meeting.room}
-                  </div>
-                ))}
+                {findDayMeetings?.map(meeting => {
+                  const startDate = new Date(meeting.start);
+                  const endDate = new Date(meeting.end);
+
+                  return (
+                    <div className='Meeting-info-wrapper'>
+                      <div>
+                        {startDate.getHours()}:{(String(startDate.getMinutes()) + 0).substring(0, 2)}-
+                        {endDate.getHours()}:{(String(endDate.getMinutes()) + 0).substring(0, 2)}
+                      </div>
+                      {meeting.name} in {meeting.meetingRoom}
+                    </div>
+                  );
+                })}
               </div>
             );
           })}
