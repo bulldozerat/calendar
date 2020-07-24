@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Other
-// import meetings from './meetings.json';
+import meetings from './meetings.json';
 import { convertNumberToMonthStirng } from '../../utils/helpers';
 
 // Components
@@ -10,7 +10,7 @@ import CalendarHeader from '../../components/CalendarHeader';
 import CalendarDaysGrid from '../CalendarDaysGrid';
 
 const CalendarApp = () => {
-  // const [meetingsData, setMeetingsData] = useState(meetings);
+  const [meetingsData, setMeetingsData] = useState(meetings);
   const dateNow = new Date();
   const currentMonthNumber = dateNow.getMonth();
   const [calendarActiveMonthNumber, setCalendarActiveMonthNumber] = useState(dateNow.getMonth());
@@ -32,7 +32,7 @@ const CalendarApp = () => {
         </h1>
         {/* // TODO extract to component */}
         <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} dateNow={dateNow} />
-        <CalendarDaysGrid calendarActiveMonthNumber={calendarActiveMonthNumber} />
+        <CalendarDaysGrid calendarActiveMonthNumber={calendarActiveMonthNumber} meetingsData={meetingsData} />
       </div>
     </CalendarAppWrapper>
   );

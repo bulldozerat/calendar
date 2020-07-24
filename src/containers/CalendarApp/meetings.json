@@ -168,6 +168,20 @@
       "name": "Morning Coffee Meeting",
       "meetingRoom": "Arbanasi",
       "participants": []
+    },
+    {
+      "start": "2020-07-10T10:00:00.000Z",
+      "end": "2020-07-10T10:30:00.000Z",
+      "name": "Morning Coffee Meeting",
+      "meetingRoom": "Arbanasi",
+      "participants": []
+    },
+    {
+      "start": "2020-05-10T10:00:00.000Z",
+      "end": "2020-05-10T10:30:00.000Z",
+      "name": "Morning Coffee Meeting",
+      "meetingRoom": "Arbanasi",
+      "participants": []
     }
   ]
 }
