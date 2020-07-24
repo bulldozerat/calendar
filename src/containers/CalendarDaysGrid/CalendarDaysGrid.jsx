@@ -56,7 +56,9 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData }) => {
 
             let findDayMeetings;
             if (isPrevMonthDay) {
+              findDayMeetings = prevMonthMeetings.filter(meeting => new Date(meeting.start).getDate() === dayToRender);
             } else if (isNextMonthDay) {
+              findDayMeetings = nextMonthMeetings.filter(meeting => new Date(meeting.start).getDate() === dayToRender);
             } else {
               findDayMeetings = activeMonthMeetings.filter(
                 meeting => new Date(meeting.start).getDate() === dayToRender
@@ -66,8 +68,6 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData }) => {
             if (findDayMeetings) {
               findDayMeetings.sort((a, b) => a.start.localeCompare(b.start));
             }
-
-            console.log('findDayMeetings: ', findDayMeetings);
 
             return (
               <div className={`calendar-col calendar-day-cell`} key={uuid()}>
