@@ -16,9 +16,23 @@ const CalendarDaysGrid = styled.div`
       margin-left: 0.5rem;
       font-size: 1.5rem;
     }
-    .Meeting-info-wrapper {
+    .meeting-info-wrapper {
       font-size: 10px;
+      margin-left: 0.5rem;
+      margin-bottom: 0.5rem;
     }
+    .remove-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .remove-meeting {
+      margin-bottom: 0.3rem;
+      color: red;
+      cursor: pointer;
+    }
+  }
+  .today-cell {
+    background: skyblue;
   }
 `;
 

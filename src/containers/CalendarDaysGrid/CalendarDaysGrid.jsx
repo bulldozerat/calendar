@@ -8,7 +8,7 @@ import { getDaysInMonth, getFirstDayOfMonth } from '../../utils/helpers';
 // Components
 import CalendarDaysGridWrapper from './CalendarDaysGridWrapper';
 
-const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData }) => {
+const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData, removeMeeting }) => {
   const totalGridDaysCound = 42;
   const daysInActiveMonth = getDaysInMonth(calendarActiveMonthNumber);
   const firstDayOfActiveMonth = getFirstDayOfMonth(calendarActiveMonthNumber);
@@ -25,10 +25,6 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData }) => {
   const nextMonthMeetings = meetingsData.meetings.filter(
     meeting => new Date(meeting.start).getMonth() === calendarActiveMonthNumber + 1
   );
-
-  console.log('activeMonthMeetings: ', activeMonthMeetings);
-  console.log('prevMonthMeetings: ', prevMonthMeetings);
-  console.log('nextMonthMeetings: ', nextMonthMeetings);
 
   return (
     <CalendarDaysGridWrapper>
@@ -70,17 +66,25 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData }) => {
             }
 
             return (
-              <div className={`calendar-col calendar-day-cell`} key={uuid()}>
+              <div
+                className={`calendar-col calendar-day-cell ${dayToRender === new Date().getDate() ? 'today-cell' : ''}`}
+                key={uuid()}
+              >
                 <div className='day-number'>{dayToRender}</div>
                 {findDayMeetings?.map(meeting => {
                   const startDate = new Date(meeting.start);
                   const endDate = new Date(meeting.end);
 
                   return (
-                    <div className='Meeting-info-wrapper'>
-                      <div>
-                        {startDate.getHours()}:{(String(startDate.getMinutes()) + 0).substring(0, 2)}-
-                        {endDate.getHours()}:{(String(endDate.getMinutes()) + 0).substring(0, 2)}
+                    <div className='meeting-info-wrapper' key={uuid()}>
+                      <div className='remove-wrapper'>
+                        <span>
+                          {startDate.getHours()}:{(String(startDate.getMinutes()) + 0).substring(0, 2)}-
+                          {endDate.getHours()}:{(String(endDate.getMinutes()) + 0).substring(0, 2)}
+                        </span>
+                        <span className='remove-meeting' onClick={() => removeMeeting(meeting)}>
+                          Remove
+                        </span>
                       </div>
                       {meeting.name} in {meeting.meetingRoom}
                     </div>
@@ -96,6 +100,7 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData }) => {
 
 CalendarDaysGrid.propTypes = {
   calendarActiveMonthNumber: PropTypes.number,
+  removeMeeting: PropTypes.func,
   meetingsData: PropTypes.shape({
     meetingRooms: PropTypes.array,
     // Todo add proptypes

@@ -21,6 +21,16 @@ const CalendarApp = () => {
       : setCalendarActiveMonthNumber(calendarActiveMonthNumber - 1);
   };
 
+  const removeMeeting = meetingData => {
+    const { meetingRoom, end, start, name } = meetingData;
+    const removedMeetingData = meetingsData.meetings.filter(m => {
+      const isRemovedMeeting = m.meetingRoom === meetingRoom && m.end === end && m.start === start && m.name === name;
+      return !isRemovedMeeting;
+    });
+    const newMeetingsData = { meetingRooms: [...meetingsData.meetingRooms], meetings: [...removedMeetingData] };
+    setMeetingsData(newMeetingsData);
+  };
+
   return (
     <CalendarAppWrapper>
       <div className='calendar-container'>
@@ -32,7 +42,11 @@ const CalendarApp = () => {
         </h1>
         {/* // TODO extract to component */}
         <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} dateNow={dateNow} />
-        <CalendarDaysGrid calendarActiveMonthNumber={calendarActiveMonthNumber} meetingsData={meetingsData} />
+        <CalendarDaysGrid
+          calendarActiveMonthNumber={calendarActiveMonthNumber}
+          meetingsData={meetingsData}
+          removeMeeting={removeMeeting}
+        />
       </div>
     </CalendarAppWrapper>
   );

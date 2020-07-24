@@ -4,7 +4,7 @@ const CalendarHeaderWrapper = styled.div`
   .calendar-header-cell {
     padding: 5px;
     background: #ebffff;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     border: 1px solid gray;
     border-right: none;
