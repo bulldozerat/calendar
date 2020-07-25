@@ -14,6 +14,7 @@ const ModalWrapper = styled.div`
   h3 {
     margin: 0 0 1rem 0;
     text-align: left;
+    text-transform: uppercase;
   }
   .close {
     position: absolute;

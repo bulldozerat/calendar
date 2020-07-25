@@ -12,12 +12,8 @@ const AddNewMeetingWrapper = styled.div`
     border: 1px solid gray;
     cursor: pointer;
   }
-  .modal {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: #fff;
-    border: 1px solid gray;
+  h3 {
+    font-size: 1.2rem;
   }
 `;
 
