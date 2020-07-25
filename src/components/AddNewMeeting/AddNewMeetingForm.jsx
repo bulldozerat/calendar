@@ -9,7 +9,7 @@ import { uuid } from 'uuidv4';
 // Components
 import AddNewMeetingFormWrapper from './AddNewMeetingFormWrapper';
 
-const AddNewMeetingForm = ({ meetingsData }) => {
+const AddNewMeetingForm = ({ meetingsData, addNewMeeting }) => {
   return (
     <Formik
       initialValues={{
@@ -36,7 +36,7 @@ const AddNewMeetingForm = ({ meetingsData }) => {
           .matches(/[0-2][0-9]:[0-5][0-9]/g, 'Invalid time')
       })}
       onSubmit={values => {
-        console.log('values: ', values);
+        addNewMeeting(values);
       }}
       render={() => (
         <AddNewMeetingFormWrapper>
@@ -63,12 +63,12 @@ const AddNewMeetingForm = ({ meetingsData }) => {
             </div>
             <div className='form-group'>
               <label htmlFor='ddMmYyyy'>Start time *</label>
-              <Field name='hhMm' type='text' id='hhMm' placeholder='Enter hh-mm format' />
+              <Field name='hhMm' type='text' id='hhMm' placeholder='Enter hh:mm format' />
               <ErrorMessage name='hhMm' component='div' className='formik-error' />
             </div>
             <div className='form-group'>
               <label htmlFor='durationHhMm'>Duration time *</label>
-              <Field name='durationHhMm' type='text' id='durationHhMm' placeholder='Enter hh-mm format' />
+              <Field name='durationHhMm' type='text' id='durationHhMm' placeholder='Enter hh:mm format' />
               <ErrorMessage name='durationHhMm' component='div' className='formik-error' />
             </div>
             <div className='form-group'>
@@ -82,6 +82,7 @@ const AddNewMeetingForm = ({ meetingsData }) => {
 };
 
 AddNewMeetingForm.propTypes = {
+  addNewMeeting: PropTypes.func,
   meetingsData: PropTypes.shape({
     meetingRooms: PropTypes.array
   })

@@ -32,11 +32,26 @@ const CalendarApp = () => {
     setMeetingsData(newMeetingsData);
   };
 
+  const addNewMeeting = formData => {
+    const { name, ddMmYyyy, hhMm, meetingRoom, durationHhMm } = formData;
+    const [dd, mm, yyyy] = ddMmYyyy.split('-');
+    const start = new Date(`${mm} ${dd}, ${yyyy} ${hhMm}`).toISOString();
+    const end = new Date(`${mm} ${dd}, ${yyyy} ${durationHhMm}`).toISOString();
+    // participants not icluded in development at all
+    const newMeeting = { name, meetingRoom, end, start, participants: [] };
+    const newMeetingsData = {
+      meetingRooms: [...meetingsData.meetingRooms],
+      meetings: [...meetingsData.meetings, newMeeting]
+    };
+
+    setMeetingsData(newMeetingsData);
+  };
+
   return (
     <CalendarAppWrapper>
       <div className='calendar-container'>
         <CalendarTitle calendarActiveMonthNumber={calendarActiveMonthNumber} changeMonth={changeMonth} />
-        <AddNewMeeting meetingsData={meetingsData} />
+        <AddNewMeeting meetingsData={meetingsData} addNewMeeting={addNewMeeting} />
         <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} dateNow={dateNow} />
         <CalendarDaysGrid
           calendarActiveMonthNumber={calendarActiveMonthNumber}

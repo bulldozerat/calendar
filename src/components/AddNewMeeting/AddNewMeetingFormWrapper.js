@@ -18,6 +18,7 @@ const AddNewMeetingFormWrapper = styled.div`
     background: #fff;
     outline: none;
     border: none;
+    text-transform: uppercase;
     cursor: pointer;
   }
   .formik-error {

@@ -10,6 +10,8 @@ const AddNewMeetingWrapper = styled.div`
     background: skyblue;
     color: #fff;
     border: 1px solid gray;
+    font-size: 1.3rem;
+    text-transform: uppercase;
     cursor: pointer;
   }
   h3 {

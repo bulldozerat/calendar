@@ -6,7 +6,7 @@ import AddNewMeetingWrapper from './AddNewMeetingWrapper';
 import Modal from '../Modal';
 import AddNewMeetingForm from './AddNewMeetingForm';
 
-const AddNewMeeting = ({ meetingsData }) => {
+const AddNewMeeting = ({ meetingsData, addNewMeeting }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
@@ -15,8 +15,8 @@ const AddNewMeeting = ({ meetingsData }) => {
         Add new meeting
       </div>
       {isModalOpen && (
-        <Modal title='Add new meeting' closeModal={() => setIsModalOpen(false)}>
-          <AddNewMeetingForm meetingsData={meetingsData} />
+        <Modal title='Add new meeting' left='37%' top='27px' closeModal={() => setIsModalOpen(false)}>
+          <AddNewMeetingForm meetingsData={meetingsData} addNewMeeting={addNewMeeting} />
         </Modal>
       )}
     </AddNewMeetingWrapper>
@@ -24,7 +24,8 @@ const AddNewMeeting = ({ meetingsData }) => {
 };
 
 AddNewMeeting.propTypes = {
-  meetingsData: PropTypes.shape({})
+  meetingsData: PropTypes.shape({}),
+  addNewMeeting: PropTypes.func
 };
 
 export default AddNewMeeting;
