@@ -27,6 +27,14 @@ const AddNewMeetingFormWrapper = styled.div`
   input::placeholder {
     font-size: 1rem;
   }
+  .select-wrapper {
+    display: flex;
+    select {
+      padding: 2px;
+      width: 100%;
+      font-size: 12px;
+    }
+  }
 `;
 
 export default AddNewMeetingFormWrapper;

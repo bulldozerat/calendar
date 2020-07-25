@@ -36,7 +36,7 @@ const CalendarApp = () => {
     <CalendarAppWrapper>
       <div className='calendar-container'>
         <CalendarTitle calendarActiveMonthNumber={calendarActiveMonthNumber} changeMonth={changeMonth} />
-        <AddNewMeeting />
+        <AddNewMeeting meetingsData={meetingsData} />
         <CalendarHeader isCurrentMonth={currentMonthNumber === calendarActiveMonthNumber} dateNow={dateNow} />
         <CalendarDaysGrid
           calendarActiveMonthNumber={calendarActiveMonthNumber}
