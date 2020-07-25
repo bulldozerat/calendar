@@ -9,7 +9,7 @@ import { uuid } from 'uuidv4';
 // Components
 import AddNewMeetingFormWrapper from './AddNewMeetingFormWrapper';
 
-const AddNewMeetingForm = ({ meetingsData, addNewMeeting }) => {
+const AddNewMeetingForm = ({ meetingsData, addNewMeeting, closeModal }) => {
   return (
     <Formik
       initialValues={{
@@ -37,6 +37,7 @@ const AddNewMeetingForm = ({ meetingsData, addNewMeeting }) => {
       })}
       onSubmit={values => {
         addNewMeeting(values);
+        closeModal();
       }}
       render={() => (
         <AddNewMeetingFormWrapper>
@@ -83,6 +84,7 @@ const AddNewMeetingForm = ({ meetingsData, addNewMeeting }) => {
 
 AddNewMeetingForm.propTypes = {
   addNewMeeting: PropTypes.func,
+  closeModal: PropTypes.func,
   meetingsData: PropTypes.shape({
     meetingRooms: PropTypes.array
   })

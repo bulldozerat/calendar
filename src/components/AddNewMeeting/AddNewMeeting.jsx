@@ -7,7 +7,8 @@ import Modal from '../Modal';
 import AddNewMeetingForm from './AddNewMeetingForm';
 
 const AddNewMeeting = ({ meetingsData, addNewMeeting }) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <AddNewMeetingWrapper>
@@ -15,8 +16,8 @@ const AddNewMeeting = ({ meetingsData, addNewMeeting }) => {
         Add new meeting
       </div>
       {isModalOpen && (
-        <Modal title='Add new meeting' left='37%' top='27px' closeModal={() => setIsModalOpen(false)}>
-          <AddNewMeetingForm meetingsData={meetingsData} addNewMeeting={addNewMeeting} />
+        <Modal title='Add new meeting' left='37%' top='2.7rem' closeModal={closeModal}>
+          <AddNewMeetingForm meetingsData={meetingsData} addNewMeeting={addNewMeeting} closeModal={closeModal} />
         </Modal>
       )}
     </AddNewMeetingWrapper>

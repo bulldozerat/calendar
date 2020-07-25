@@ -6,10 +6,10 @@ const AddNewMeetingWrapper = styled.div`
   text-align: center;
   .add-new-meeting {
     display: inline-block;
-    padding: 5px;
+    padding: 0.5rem;
     background: skyblue;
     color: #fff;
-    border: 1px solid gray;
+    border: 0.1rem solid gray;
     font-size: 1.3rem;
     text-transform: uppercase;
     cursor: pointer;

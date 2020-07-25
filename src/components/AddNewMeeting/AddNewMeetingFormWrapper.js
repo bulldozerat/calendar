@@ -31,9 +31,9 @@ const AddNewMeetingFormWrapper = styled.div`
   .select-wrapper {
     display: flex;
     select {
-      padding: 2px;
+      padding: 0.2rem;
       width: 100%;
-      font-size: 12px;
+      font-size: 1.2rem;
     }
   }
 `;

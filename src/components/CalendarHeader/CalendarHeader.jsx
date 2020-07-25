@@ -18,7 +18,7 @@ const CalendarHeader = ({ isCurrentMonth, dateNow }) => {
           className={`calendar-col calendar-header-cell ${currentDayString === day && isCurrentMonth ? 'active' : ''}`}
           key={uuid()}
         >
-          {day}
+          <span>{day}</span>
         </div>
       ))}
     </CalendarHeaderWrapper>

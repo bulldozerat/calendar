@@ -2,14 +2,17 @@ import styled from '@emotion/styled';
 
 const CalendarHeaderWrapper = styled.div`
   .calendar-header-cell {
-    padding: 5px;
     background: #ebffff;
     font-size: 1.4rem;
     text-transform: uppercase;
-    border: 1px solid gray;
+    border: 0.1rem solid gray;
     border-right: none;
     &:last-of-type {
-      border-right: 1px solid gray;
+      border-right: 0.1rem solid gray;
+    }
+    span {
+      display: inline-block;
+      padding: 0.5rem;
     }
   }
   .active {
@@ -19,11 +22,6 @@ const CalendarHeaderWrapper = styled.div`
   @media only screen and (max-width: 992px) {
     .calendar-header-cell {
       font-size: 1rem;
-    }
-  }
-  @media only screen and (max-width: 992px) {
-    .calendar-header-cell {
-      font-size: 0.7rem;
     }
   }
 `;

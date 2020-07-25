@@ -3,23 +3,29 @@ import styled from '@emotion/styled';
 const CalendarDaysGrid = styled.div`
   display: flex;
   .calendar-day-cell {
-    padding: 5px;
     background: #fff;
-    border-left: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-left: 0.1rem solid gray;
+    border-bottom: 0.1rem solid gray;
     height: auto;
-    min-height: 80px;
+    min-height: 8rem;
     &:nth-of-type(7n) {
-      border-right: 1px solid gray;
+      border-right: 0.1rem solid gray;
     }
     .day-number {
+      padding: 0.5rem;
       margin-left: 0.5rem;
       font-size: 1.5rem;
+      @media only screen and (max-width: 992px) {
+        & {
+          font-size: 1rem;
+        }
+      }
     }
     .meeting-info-wrapper {
       margin-left: 0.5rem;
       margin-bottom: 0.5rem;
-      font-size: 10px;
+      padding: 0 0.5rem;
+      font-size: 1rem;
     }
     .remove-wrapper {
       display: flex;
@@ -29,7 +35,7 @@ const CalendarDaysGrid = styled.div`
     .remove-meeting {
       margin-bottom: 0.3rem;
       color: red;
-      font-size: 8px;
+      font-size: 0.8rem;
       cursor: pointer;
     }
   }
