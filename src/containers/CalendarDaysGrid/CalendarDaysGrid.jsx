@@ -105,7 +105,7 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData, removeMeeti
 CalendarDaysGrid.propTypes = {
   calendarActiveMonthNumber: PropTypes.number,
   removeMeeting: PropTypes.func,
-  dateNow: PropTypes.string,
+  dateNow: PropTypes.instanceOf(Date),
   meetingsData: PropTypes.shape({
     meetingRooms: PropTypes.array,
     // Todo add proptypes

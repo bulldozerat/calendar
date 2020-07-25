@@ -14,7 +14,7 @@ const CalendarHeaderWrapper = styled.div`
   }
   .active {
     background: skyblue;
-    font-weight: 600;
+    color: #fff;
   }
   @media only screen and (max-width: 992px) {
     .calendar-header-cell {

@@ -35,6 +35,7 @@ const CalendarDaysGrid = styled.div`
   }
   .today-cell {
     background: skyblue;
+    color: #fff;
   }
 `;
 

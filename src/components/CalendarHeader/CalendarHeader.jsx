@@ -27,9 +27,7 @@ const CalendarHeader = ({ isCurrentMonth, dateNow }) => {
 
 CalendarHeader.propTypes = {
   isCurrentMonth: PropTypes.bool,
-  dateNow: PropTypes.shape({
-    getDay: PropTypes.func
-  })
+  dateNow: PropTypes.instanceOf(Date)
 };
 
 export default CalendarHeader;
