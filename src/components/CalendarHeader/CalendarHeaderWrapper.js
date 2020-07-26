@@ -16,7 +16,7 @@ const CalendarHeaderWrapper = styled.div`
     }
   }
   .active {
-    background: skyblue;
+    background: #556de6;
     color: #fff;
   }
   @media only screen and (max-width: 992px) {

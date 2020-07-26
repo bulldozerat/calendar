@@ -23,17 +23,16 @@ const AddNewMeetingForm = ({ meetingsData, addNewMeeting, closeModal }) => {
         ddMmYyyy: Yup.string()
           .required('Ivalid date')
           .length(10, 'Please enter dd-mm-yyyy format')
+          // For testing previous dates work (can be made, so it accepts only dates from today)
           .matches(/(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-(19|20)\d\d/g, 'Invalid date'),
         hhMm: Yup.string()
           .required('Ivalid time')
           .length(5, 'Please enter hh:mm format')
-          // TODO improve regEx
-          .matches(/[0-2][0-9]:[0-5][0-9]/g, 'Invalid time'),
+          .matches(/([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/g, 'Invalid time'),
         durationHhMm: Yup.string()
           .required('Ivalid time')
           .length(5, 'Please enter hh:mm format')
-          // TODO improve regEx
-          .matches(/[0-2][0-9]:[0-5][0-9]/g, 'Invalid time')
+          .matches(/([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/g, 'Invalid time')
       })}
       onSubmit={values => {
         addNewMeeting(values);

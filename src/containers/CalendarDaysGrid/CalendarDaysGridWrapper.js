@@ -40,7 +40,7 @@ const CalendarDaysGrid = styled.div`
     }
   }
   .today-cell {
-    background: skyblue;
+    background: #556de6;
     color: #fff;
   }
 `;

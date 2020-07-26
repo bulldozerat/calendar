@@ -7,7 +7,7 @@ const AddNewMeetingWrapper = styled.div`
   .add-new-meeting {
     display: inline-block;
     padding: 0.5rem;
-    background: skyblue;
+    background: #556de6;
     color: #fff;
     border: 0.1rem solid gray;
     font-size: 1.3rem;

@@ -25,10 +25,11 @@ export const convertNumberToMonthStirng = monthdayNumber => {
 
 export const getDaysInMonth = (month, isPrevMonth) => {
   const returnMonth = isPrevMonth ? month : month + 1;
-  // January is 0
+  // Development covers only 2020
   return new Date(2020, returnMonth, 0).getDate();
 };
 
 export const getFirstDayOfMonth = month => {
+  // Development covers only 2020
   return new Date(2020, month, 1).getDay();
 };
