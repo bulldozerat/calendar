@@ -14,17 +14,17 @@ const CalendarDaysGrid = ({ calendarActiveMonthNumber, meetingsData, removeMeeti
   const firstDayOfActiveMonth = getFirstDayOfMonth(calendarActiveMonthNumber);
   let lastDayInPrevMonth = getDaysInMonth(calendarActiveMonthNumber - 1);
 
-  const activeMonthMeetings = meetingsData.meetings.filter(
-    meeting => new Date(meeting.start).getMonth() === calendarActiveMonthNumber
-  );
+  const getMatchingMeetings = (number, isNegative) => {
+    let checkMonthNum = isNegative ? calendarActiveMonthNumber - number : calendarActiveMonthNumber + number;
+    if (checkMonthNum === 12) checkMonthNum = 0;
+    if (checkMonthNum === -1) checkMonthNum = 11;
 
-  // TODO optimize with func, cover edge cases where calendarActiveMonthNumber is 0 or 11
-  const prevMonthMeetings = meetingsData.meetings.filter(
-    meeting => new Date(meeting.start).getMonth() === calendarActiveMonthNumber - 1
-  );
-  const nextMonthMeetings = meetingsData.meetings.filter(
-    meeting => new Date(meeting.start).getMonth() === calendarActiveMonthNumber + 1
-  );
+    return meetingsData.meetings.filter(meeting => new Date(meeting.start).getMonth() === checkMonthNum);
+  };
+
+  const activeMonthMeetings = getMatchingMeetings(0);
+  const prevMonthMeetings = getMatchingMeetings(1, true);
+  const nextMonthMeetings = getMatchingMeetings(1);
 
   return (
     <CalendarDaysGridWrapper>
