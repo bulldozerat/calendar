@@ -8,7 +8,7 @@ const ModalWrapper = styled.div`
   z-index: 1;
   padding: 1.5rem;
   min-width: 26rem;
-  background: #284a45;
+  background: #284969;
   color: #fff;
   cursor: default;
   h3 {
